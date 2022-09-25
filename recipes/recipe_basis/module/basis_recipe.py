@@ -1,14 +1,14 @@
 class Basis:
-    def __init__(self, prop : dict):
+    def __init__(self, prop):
         """
-
-        :type args: object
+        To works with large data file json
+        :type prop: file json data
         """
         self.lists = []
         self.dics = prop
         self.objects = None
 
-    def __iter__(self):
+    def __iter__(self) -> list:
         if self.lists != []:
             self.objects = self.lists
         elif self.dics != {}:
@@ -17,7 +17,7 @@ class Basis:
             list_value = list(dict(self.dics).values())
             self.objects = list(zip(list_key, list_value))
         return self
-    def __next__(self):
+    def __next__(self) -> tuple:
         for obj in self.objects:
 
 
