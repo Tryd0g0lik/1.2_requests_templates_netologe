@@ -19,12 +19,12 @@ def menuMain(fileName : str):
 
 Введите команду""")
 
-	inp = input(": ")
-	inp = (inp).strip().lower()
-	if len(inp) <= 3 and len(inp) > 0:
-			for i in range(0, len(menu[1]) -1):
-				if inp == menu[1][i]:
-					i
+	# inp = input(": ")
+	# inp = (inp).strip().lower()
+	# if len(inp) <= 3 and len(inp) > 0:
+	# 		for i in range(0, len(menu[1]) -1):
+	# 			if inp == menu[1][i]:
+	# 				i
 
 
 

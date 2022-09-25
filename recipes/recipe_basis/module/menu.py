@@ -1,4 +1,5 @@
 import json
+from recipes.recipe_basis.module.basis_recipe import Basis
 class Menu:
     """
       def 'allResipes' - return a tuple type. The first element it's menu when type is str. Second element it's
@@ -17,6 +18,7 @@ class Menu:
     def __allResipes(self, recipes) -> tuple:
         """
         Function gets file (it's json) contents.
+        :param 'Basis': import  an iterator the iterator gets json file data and  returns a dictionary string
         :param recipes: The data of json file.
         :return: return a tuple type. The first element it's menu when type is str. Second element it's
       list type, a commands
@@ -40,7 +42,8 @@ class Menu:
       :return: tuple, it gets of '__allResipes' function
       """
       with open(f"files/{fileName}", encoding='utf-8', mode="r") as jsFile:
-        self.json_data = json.load(jsFile)
+        self.json_data = Basis(json.load(jsFile))
 
-      self.menu = Menu.__allResipes(self, self.json_data)
+
+      self.menu = Menu.__allResipes(self, self.json_data )
       return self.menu

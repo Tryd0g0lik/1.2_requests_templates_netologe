@@ -1,6 +1,7 @@
 class Basis:
     def __init__(self, prop):
         """
+        Class is iterator/
         To works with large data file json
         :type prop: file json data
         """
