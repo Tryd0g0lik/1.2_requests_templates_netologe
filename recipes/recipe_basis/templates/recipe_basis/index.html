@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Main Menu</title>
+</head>
+<body><br>
+{% for l in text %}
+<ul>
+  <li>{{ l }}</li>
+</ul>
+{% endfor %}
+
+<form action="/omlet/" method="post">
+   {% csrf_token %}
+   {{form}}
+    <label for="command">Rоmmand: </label>
+    <input id="command" type="text" name="command" value="{{ com }}">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>
