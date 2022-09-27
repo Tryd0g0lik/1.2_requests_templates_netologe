@@ -20,12 +20,12 @@ from django.urls import path, include
 
 from recipe_basis.views import *
 
+from recipe_basis.views import menuMain, omlet
+
 urlpatterns = [
     # здесь зарегистрируйте вашу view-функцию
-	# path('admin/', admin.site.url),
-	# path('recipe/', include('recipe_basis.urls'), name='recipe'),
-	# path('index/', include('recipe_basis.urls')),
-	path('recipe/', recipe, name='recipe'),
-	path('', menuMain, name='index'),
+
+	path("", menuMain, name="index"),
+	path("omlet/", omlet, name="omlet")
 
 ]

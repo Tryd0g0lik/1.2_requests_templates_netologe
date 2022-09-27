@@ -2,29 +2,24 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+
    <title>Form for a comands</title>
+
 </head>
-<body>
-<div id="command">
-   <form class="command" method="post"
-         action="recipe/">
-      {% csrf_token %}
-<!--      {{ form }}-->
-      <fieldset>
-         <div class="command__form">
-            <legend>Комманда для выбора рецепта согласно меню</legend>
-            <div class="command__form_insert">
-               <label>Команда: </label>
-               <input type="text" id="comm" value="insert">
-            </div>
-            <div class="command__form_push">
-               <input type="submit" id="pushSabmit" value="Отправить">
-            </div>
-         </div>
-         
-         
-      </fieldset>
-   </form>
-</div>
+<body><br>
+{% for l in text %}
+<ul>
+  <li>{{ l }}</li>
+</ul>
+{% endfor %}
+
+<form action="/omlet/" method="post">
+   {% csrf_token %}
+   {{form}}
+    <label for="command">Rоmmand: </label>
+    <input id="command" type="text" name="command" value="{{ com }}">
+    <input type="submit" value="OK">
+</form>
+
 </body>
 </html>
