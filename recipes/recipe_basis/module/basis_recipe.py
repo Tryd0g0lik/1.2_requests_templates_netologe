@@ -1,3 +1,4 @@
+import json
 class Basis:
     def __init__(self, prop):
         """
@@ -13,6 +14,7 @@ class Basis:
         if self.lists != []:
             self.objects = self.lists
         elif self.dics != {}:
+
             # for key in :
             list_key = list(dict(self.dics).keys())
             list_value = list(dict(self.dics).values())
@@ -26,8 +28,23 @@ class Basis:
                 list(self.objects).pop(0)
                 continue
             elif type(obj) == tuple:
-                # Выпускаем через ретурн и там проверка ключа на совпадение запроса к реуцепту
+
                 self.objects.pop(0)
                 return obj
         if self.objects == []:
             raise StopIteration
+
+
+def recipes() -> list:
+    """
+    It's generates
+    :return: dictionary
+    """
+    fileName = "D:\\django-sites\\NetologeDjango\\first_project\\dj-homeworks\\1.2-requests-templates\\recipes\\recipe_basis\\files\\data.json"
+    l = []
+    # rec = request.POST.get('command')
+    with open(file=fileName, encoding="utf-8", mode='r') as file:
+        for rec in Basis(json.load(file)):
+            rec = list(dict(rec).keys())[0][0: 3]
+            l.append(rec)
+    return l

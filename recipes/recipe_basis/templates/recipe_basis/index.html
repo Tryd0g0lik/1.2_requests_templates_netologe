@@ -16,10 +16,12 @@
 <form action="/omlet/" method="post">
    {% csrf_token %}
    {{form}}
-    <label for="command">Rоmmand: </label>
+    <label for="command">Команда: </label>
     <input id="command" type="text" name="command" value="{{ com }}">
     <input type="submit" value="OK">
 </form>
-
+<div><h2>{{ com }}</h2></div>
+ <div>{{ lists}}</div>
+ 
 </body>
 </html>
