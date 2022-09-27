@@ -29,7 +29,6 @@ def menuMain(fileName : str):
 
 
 
-	# if menu ==
 
 
 	return menu
