@@ -1,5 +1,6 @@
 import json
-from recipes.recipe_basis.module.basis_recipe import Basis
+from recipe_basis.module.basis_recipe import Basis
+from  django.core.files.storage import Storage
 class Menu:
     """
       def 'allResipes' - return a tuple type. The first element it's menu when type is str. Second element it's
@@ -35,13 +36,14 @@ class Menu:
         self.menu_var = menu_var[ : -1] + "."
         return (self.menu_var, self.commands_var)
 
+
     def menu(self, fileName : str) -> str:
       """
 			Returns command's  a symbol for run a menu and the list comand
       :param fileName: The file name there has recipes list
       :return: tuple, it gets of '__allResipes' function
       """
-      with open(f"files/{fileName}", encoding='utf-8', mode="r") as jsFile:
+      with open(f"recipes\\recipe_basis\\files\\{fileName}", encoding='utf-8', mode="r") as jsFile:
         self.json_data = Basis(json.load(jsFile))
 
 
