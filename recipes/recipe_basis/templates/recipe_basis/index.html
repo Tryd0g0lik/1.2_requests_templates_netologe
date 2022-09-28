@@ -9,7 +9,7 @@
 <body>
 <header>
    <menu>
-      <li><a href=" {{ main }} ">Main</a></li>
+      <li><a name='index' href="">Main</a></li>
       <li><a href="calc/">Сalculator</a></li>
    </menu>
 </header>
@@ -20,6 +20,7 @@
      <li>{{ l }}</li>
    </ul>
    {% endfor %}
+   
    
    <form action="/omlet/" method="post">
       {% csrf_token %}

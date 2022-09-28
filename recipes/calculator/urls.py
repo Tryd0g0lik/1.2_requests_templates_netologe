@@ -1,7 +1,8 @@
-from calculator.views import index
-from django.urls import path, include
-from .views import index
+from calculator.views import index, calc
+from django.urls import path
+
 
 urlpatterns=[
-	path('', index, name='index')
+	path('', index, name='index'),
+	path('result/', calc, name="result")
 ]

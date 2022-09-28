@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recipe_basis.apps.RecipeBasisConfig',
+    'calculator.apps.CalculatorConfig'
     # 'django.recipes.CalculatorConfig',
 ]
 
