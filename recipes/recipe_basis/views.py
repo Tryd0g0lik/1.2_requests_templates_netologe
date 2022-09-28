@@ -24,7 +24,10 @@ def menuMain(request):
 	main_menu = f"""
 Меню команды для выбора рецепта:; {menu[0]}
 """.split(";")
-	return render(request=request, template_name='recipe_basis/index.html', context={'text' : main_menu})
+	rend = render(request=request, template_name='recipe_basis/index.html', context={'text' : main_menu})
+	if request.POST.get("main"):
+		return rend
+	return rend
 
 
 

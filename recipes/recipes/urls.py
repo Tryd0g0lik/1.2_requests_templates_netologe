@@ -28,6 +28,6 @@ urlpatterns = [
 
 	path("", menuMain, name="index"),
 	path("omlet/", omlet, name="omlet"),
-
+	path("calc/", include("calculator.urls")),
 
 ]
