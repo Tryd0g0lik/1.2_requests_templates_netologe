@@ -25,6 +25,7 @@ from recipe_basis.views import menuMain, omlet
 urlpatterns = [
     # здесь зарегистрируйте вашу view-функцию
 
+
 	path("", menuMain, name="index"),
 	path("omlet/", omlet, name="omlet"),
 
