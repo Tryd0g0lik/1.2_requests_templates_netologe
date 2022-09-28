@@ -1,4 +1,6 @@
 recipes/__pycache__/
+recipes/calculator/__pycache__/
+recipes/recipe_basis/__pycache__/
 pagination/
 client/
 .idea/
