@@ -42,7 +42,7 @@ def recipes() -> list:
     """
     fileName = "D:\\django-sites\\NetologeDjango\\first_project\\dj-homeworks\\1.2-requests-templates\\recipes\\recipe_basis\\files\\data.json"
     l = []
-    # rec = request.POST.get('command')
+
     with open(file=fileName, encoding="utf-8", mode='r') as file:
         for rec in Basis(json.load(file)):
             rec = list(dict(rec).keys())[0][0: 3]

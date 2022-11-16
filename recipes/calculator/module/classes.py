@@ -17,7 +17,6 @@ class Basis:
             self.objects = self.lists
         elif self.dics != {}:
 
-            # for key in :
             list_key = list(dict(self.dics).keys())
             list_value = list(dict(self.dics).values())
             self.objects = list(zip(list_key, list_value))
@@ -56,7 +55,7 @@ class Calc:
 
     def calc(self) -> list:
         recepe_response = Calc.filtCalc(self)
-        print(f"5555555555 {recepe_response}")
+        print(f"Response: {recepe_response}")
 
         product = list(dict(list(recepe_response)[0][1]).keys())
         numbers = list(dict(list(recepe_response)[0][1]).values())
@@ -66,7 +65,7 @@ numbers: {numbers},
 i: {i}, elem: {elem}""")
 
             numbers[i] *= self.number
-        print(f"numbers[i]: {numbers}")
+        print(f"Numbers[i]: {numbers}")
         response = list(zip(product, numbers))
-        print(f"response: {response}")
+        print(f"Response: {response}")
         return response
