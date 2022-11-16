@@ -1,4 +1,6 @@
 import json
+
+
 class Basis:
     def __init__(self, prop):
         """
@@ -20,6 +22,7 @@ class Basis:
             list_value = list(dict(self.dics).values())
             self.objects = list(zip(list_key, list_value))
         return self
+
     def __next__(self) -> tuple:
         for obj in self.objects:
             print(f"dfsis {obj}")
@@ -34,9 +37,10 @@ class Basis:
         if self.objects == []:
             raise StopIteration
 
+
 class Calc:
 
-    def __init__(self, pathFile : str, recipe : str, number : int):
+    def __init__(self, pathFile: str, recipe: str, number: int):
         self.pathFile = pathFile
         self.recipe = recipe
         self.number = number
@@ -46,10 +50,7 @@ class Calc:
         with open(self.pathFile, encoding="utf-8", mode="r") as file:
             f = json.load(file)
 
-            # for g in Basis(f):
-            #     print(f"66666 {g}")
-            #     print(f"7777  {g[0]}")
-            print(f"fff \n {[ response for response in Basis(f) if tuple(response)[0] == self.recipe]}")
+            print(f"""fff \n {[ response for response in Basis(f) if tuple(response)[0] == self.recipe]}""")
             recepe_response = [ response for response in Basis(f) if tuple(response)[0] == self.recipe]
             return recepe_response
 
@@ -69,5 +70,3 @@ i: {i}, elem: {elem}""")
         response = list(zip(product, numbers))
         print(f"response: {response}")
         return response
-
-
